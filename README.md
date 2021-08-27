@@ -5,7 +5,7 @@ Yet another AutoLayout abstraction framework that halps to simplify managing NSL
 LayoutChain has simple intuitive syntax and decreased compilation time of views layout setup. Easy access to creating single constraint and features to setup own UIStackView with a little amount of constraints.
 
 ### Motivation
-The idea was to create lightweight wrapper on AutoLayout without lossing acces to native API. Other frameworks may have a lot of generics and operators overload that can significantly increase the time for type-checking during compilation. Some frameworks has complex API to construct layout but even do not has simple functions to take a single constraint for its managing.
+The idea was to create lightweight wrapper on AutoLayout without lossing access to native API. Other frameworks may have a lot of generics and operators overload that can significantly increase the time for type-checking during compilation. Some frameworks has complex API to construct layout but even do not has simple functions to take a single constraint for its managing.
 
 ## Contents
 - [Requirements](#requirements)
@@ -40,11 +40,32 @@ To integrate LayoutChain into your Xcode project using Swift Package Manager, ad
 
 ```swift
 dependencies: [
-    .package(url: "https://github.com/romdevios/LayoutChain.git", .upToNextMajor(from: "1.0.0"))
+    .package(url: "https://github.com/romdevios/LayoutChain.git", .upToNextMajor(from: "0.1.0"))
 ]
 ```
 
 Or add dependency manually in Xcode. File -> Swift Packages -> Add Package Dependency... then enter the package URL 'https://github.com/romdevios/LayoutChain.git' and click Next button.
+
+
+### CocoaPods
+
+[CocoaPods](#https://cocoapods.org) is a dependency manager for Cocoa projects. You can install it with the following command:
+```
+$ gem install cocoapods
+```
+To integrate **LayoutChain** into your Xcode project using CocoaPods, specify it in your `Podfile`:
+```ruby
+platform :ios, '9.0'
+use_frameworks!
+
+target '<Your Target Name>' do
+  pod 'LayoutChain'
+end
+```
+Then, run the following command:
+```
+$ pod install --repo-update
+```
 
 <br />
 
