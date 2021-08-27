@@ -31,4 +31,4 @@ if [ "$#" -eq 1 ]; then
   exit 1
 fi
 
-pod repo push LayoutChain LayoutChain.podspec
+pod trunk repo LayoutChain.podspec
