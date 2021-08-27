@@ -46,40 +46,46 @@ dependencies: [
 
 Or add dependency manually in Xcode. File -> Swift Packages -> Add Package Dependency... then enter the package URL 'https://github.com/romdevios/LayoutChain.git' and click Next button.
 
+<br />
 
 ## Example
 
 <details>
-  <summary>Setup ViewController</summary>
-    ```swift
-    import LayoutChain
-    
-    class ViewController: UIViewController {
-        
-        let container = UIView()
-        let view2 = UIView()
-        let view3 = UIView()
-        let view4 = UIView()
+   <summary>Setup ViewController</summary>
+   
+   ```swift
+   import LayoutChain
 
-        override func viewDidLoad() {
-            super.viewDidLoad()
-            
-            container.backgroundColor = .systemTeal
-            view2.backgroundColor = .systemYellow
-            view3.backgroundColor = .systemBlue
-            view4.backgroundColor = .systemIndigo
-            
-            view.addSubview(container)
-            container.addSubview(view2)
-            container.addSubview(view3)
-            container.addSubview(view4)
-            
-            layoutBuilder()
-        }
+   class ViewController: UIViewController {
 
-    }
-    ```
-<\details>
+      let container = UIView()
+      let view2 = UIView()
+      let view3 = UIView()
+      let view4 = UIView()
+
+      override func viewDidLoad() {
+         super.viewDidLoad()
+
+         container.backgroundColor = .systemTeal
+         view2.backgroundColor = .systemYellow
+         view3.backgroundColor = .systemBlue
+         view4.backgroundColor = .systemIndigo
+
+         view.addSubview(container)
+         container.addSubview(view2)
+         container.addSubview(view3)
+         container.addSubview(view4)
+
+         layoutBuilder()
+      }
+      
+      func layoutBuilder() {
+         // ...
+      }
+
+   }
+   ```
+</details>
 
 ```swift
 func layoutBuilder() {
@@ -111,10 +117,11 @@ func layoutBuilder() {
     view2.layoutChain.bottomWith(view3.topAnchor, to: view3.trailingAnchor -- view4.leadingAnchor * 2)
 }
 ```
-### Result
+#### Result
 
 <img width="288" alt="Screenshot 2021-08-27 at 11 02 24" src="https://user-images.githubusercontent.com/12981093/131094002-e2f585b0-4e74-4688-9c10-f18d4f2fe841.png">
 
+<br />
 
 ## Usage
 UIView and UILayoutGuid extended by three properties that return one of helper. All this helpers confirms to LayoutBuilders for each orientation with set of functions for each anchor type.
@@ -192,14 +199,15 @@ box.layoutChain
 For composite anchors it is special operator `--` to make demension anchor from two xAxis or yAxis anchors.
 ```swift
 view1.leftAnchor.anchorWithOffset(to: view2.rightAnchor) // native approach
-view1.leftAnchor -- view2.rightAnchor // LayoutChain feature
+view1.leftAnchor -- view2.rightAnchor // LayoutChain featur
 ```
 
-To use this anchor in builder it is alternate functions for each xAxis and yAxis anchors.
+To use this anchor in builder it is alternate functions for each xAxis and yAxis anchors. For example, to keep distance between view3.trailing and view4.leading twice smaller then distance between box.bottom and view2.top just add the following line of code:
 ```swift
 box.layoutChain
     .bottomWith(view2.topAnchor, to: view3.trailingAnchor -- view4.leadingAnchor * 2)
 ```
+<br />
 
 ## Compilation speed
 For massive projects inevitably increases the amount of code for views layout. It is important to chose right framework to deal with it easy. Apart from being easy to read, it also must not have a big impact on compile time either.
