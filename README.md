@@ -67,6 +67,26 @@ Then, run the following command:
 $ pod install --repo-update
 ```
 
+### Carthage
+
+[Carthage](https://github.com/Carthage/Carthage) is a decentralized dependency manager that builds your dependencies and provides you with binary frameworks.
+
+You can install Carthage with [Homebrew](http://brew.sh/) using the following command:
+
+```bash
+$ brew update
+$ brew install carthage
+```
+
+To integrate LayoutChain into your Xcode project using Carthage, specify it in your `Cartfile`:
+
+```ogdl
+github "romdevios/LayoutChain"
+```
+
+Run `$ carthage update --use-xcframeworks` and drag the built `.xcframework` bundles from `Carthage/Build` into the "Frameworks and Libraries" section of your application’s Xcode project. If you are using Carthage for an application, select "Embed & Sign", otherwise "Do Not Embed".
+
+
 <br />
 
 ## Example
