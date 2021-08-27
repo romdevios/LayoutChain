@@ -34,7 +34,7 @@ The idea was to create lightweight wrapper on AutoLayout without lossing access 
 
   spec.source       = { :git => "https://github.com/romdevios/LayoutChain.git", :tag => "#{spec.version}" }
 
-  spec.source_files  = "Sources/LayoutBuilder/**/*.{h,m,swift}"
+  spec.source_files  = "Sources/**/*.swift"
 
 
 end

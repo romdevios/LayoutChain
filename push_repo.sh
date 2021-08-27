@@ -1,5 +1,14 @@
 #!/bin/sh
 
+pod spec lint LayoutChain.podspec
+
+if [ $? -eq 0 ]; then
+    echo "Lint passed"
+else
+    exit $?
+fi
+
+
 while getopts ":v:" opt; do
   case $opt in
     v) 
