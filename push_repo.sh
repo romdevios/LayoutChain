@@ -1,6 +1,6 @@
 #!/bin/sh
 
-pod spec lint LayoutChain.podspec
+pod spec lint LayoutChain.podspec --quick
 
 if [ $? -eq 0 ]; then
     echo "Lint passed"
