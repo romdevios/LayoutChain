@@ -221,21 +221,21 @@ box.layoutStack(axis: .vertical, view1, view2, view3)
 <details>
     <summary>Example</summary>
 
-    ```swift
-    container.constrain(
-        .centerX === 0,
-        .centerY === 0,
-        .width == view.widthAnchor * 0.8,
-        .height == 100
-    )
+```swift
+ container.constrain(
+     .centerX === 0,
+     .centerY === 0,
+     .width == view.widthAnchor * 0.8,
+     .height == 100
+ )
+
+ container.layoutStack(axis: .horizontal, view2, view3, view4)
+     .stackInsets(.init(top: 4, left: 8, bottom: 4, right: 8))
+     .stackDistributionEqual()
+     .stackSpacing(8)
+```
     
-    container.layoutStack(axis: .horizontal, view2, view3, view4)
-        .stackInsets(.init(top: 4, left: 8, bottom: 4, right: 8))
-        .stackDistributionEqual()
-        .stackSpacing(8)
-    ```
-    
-    <img width="290" alt="Screenshot 2022-02-02 at 23 13 36" src="https://user-images.githubusercontent.com/12981093/152229948-512c858e-ec5c-4bfb-964d-7f42c18e4a63.png">
+<img width="290" alt="Screenshot 2022-02-02 at 23 13 36" src="https://user-images.githubusercontent.com/12981093/152229948-512c858e-ec5c-4bfb-964d-7f42c18e4a63.png">
 </details>
 
 
