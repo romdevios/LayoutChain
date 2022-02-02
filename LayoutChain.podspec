@@ -9,7 +9,7 @@
 Pod::Spec.new do |spec|
 
   spec.name         = "LayoutChain"
-  spec.version      = "0.1.0"
+  spec.version      = "0.1.3"
   spec.summary      = "A Swift AutoLayout DSL for iOS"
 
   spec.description  = <<-DESC

@@ -49,14 +49,14 @@ extension LayoutChain {
     
     /// sets widthAnchor and heightAnchor equal to argument view this anchors
     @discardableResult
-    public func equalSize(to view: UIView) -> LayoutChain {
+    public func equalSize(to view: LayoutObject) -> LayoutChain {
         return width(to: view.widthAnchor)
             .height(to: view.heightAnchor)
     }
     
     /// sets frame equal to its superview bounds with insets
     @discardableResult
-    public func padding(to view: UIView, insets: UIEdgeInsets = UIEdgeInsets.zero) -> LayoutChain {
+    public func padding(to view: LayoutObject, insets: UIEdgeInsets = UIEdgeInsets.zero) -> LayoutChain {
         return leading(to: view.leadingAnchor + insets.left)
             .trailing(to: view.trailingAnchor - insets.right)
             .top(to: view.topAnchor + insets.top)
@@ -76,7 +76,8 @@ extension LayoutChain where Object: UIView {
     /// sets frame equal to its superview bounds with insets
     @available(iOS 11.0, *)
     @discardableResult
-    public func safePadding(to view: UIView, insets: UIEdgeInsets = UIEdgeInsets.zero) -> LayoutChain {
+    public func safePadding(to view: UIView? = nil, insets: UIEdgeInsets = UIEdgeInsets.zero) -> LayoutChain {
+        let view = view ?? object.superview!
         return safeLeading(to: view.safeLeadingAnchor + insets.left)
             .safeTrailing(to: view.safeTrailingAnchor - insets.right)
             .safeTop(to: view.safeTopAnchor + insets.top)
@@ -85,7 +86,8 @@ extension LayoutChain where Object: UIView {
     
     /// sets frame equal to its superview bounds with insets
     @discardableResult
-    public func marginPadding(to view: UIView, insets: UIEdgeInsets = UIEdgeInsets.zero) -> LayoutChain {
+    public func marginPadding(to view: UIView? = nil, insets: UIEdgeInsets = UIEdgeInsets.zero) -> LayoutChain {
+        let view = view ?? object.superview!
         return leading(to: view.leadingMargin + insets.left)
             .trailing(to: view.trailingMargin - insets.right)
             .top(to: view.topMargin + insets.top)

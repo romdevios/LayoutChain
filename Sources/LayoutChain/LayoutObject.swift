@@ -38,6 +38,7 @@ extension UIView: LayoutObject {
     }
     public func layoutStack(axis: Axis, _ items: [UIView]) -> LayoutStack<UIView> {
         translatesAutoresizingMaskIntoConstraints = false
+        items.forEach({ $0.translatesAutoresizingMaskIntoConstraints = false })
         return LayoutStack(object: self, axis: axis, items: items)
     }
 }
