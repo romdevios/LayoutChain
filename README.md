@@ -222,12 +222,11 @@ box.layoutStack(axis: .vertical, view1, view2, view3)
     <summary>Example</summary>
 
 ```swift
- container.constrain(
-     .centerX === 0,
-     .centerY === 0,
-     .width == view.widthAnchor * 0.8,
-     .height == 100
- )
+ container.layoutChain
+     .centerX()
+     .centerY()
+     .width(to: view.widthAnchor * 0.8)
+     .height(to: 100)
 
  container.layoutStack(axis: .horizontal, view2, view3, view4)
      .stackInsets(.init(top: 4, left: 8, bottom: 4, right: 8))
