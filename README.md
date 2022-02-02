@@ -252,30 +252,3 @@ box.layoutChain
 ```
 <br />
 
-## Compilation speed
-For massive projects inevitably increases the amount of code for views layout. It is important to chose right framework to deal with it easy. Apart from being easy to read, it also must not have a big impact on compile time either.
-
-<details>
-  <summary>LayoutChain took 60-66ms</summary>
-  <img width="660" alt="Screenshot 2021-08-26 at 12 57 48" src="https://user-images.githubusercontent.com/12981093/131037003-31c03398-b9e4-4d18-898d-53530a9469c7.png">
-</details>
-
-<details>
-  <summary>SnapKit took 80ms</summary>
-  <img width="670" alt="Screenshot 2021-08-26 at 13 01 49" src="https://user-images.githubusercontent.com/12981093/131036938-1537b191-1c4d-43e8-a358-72e1f0c7e4b2.png">
-</details>
-
-<details>
-  <summary>Standart AutoLayout took 58ms</summary>
-  <img width="673" alt="Screenshot 2021-08-26 at 13 03 02" src="https://user-images.githubusercontent.com/12981093/131036511-8879da45-5544-4a93-815b-5c2704158453.png">
-</details>
-
-As you can see that LayoutChain does not concede to native approach, but much better then some other popular frameworks.
-
-
-For a better experience I also recomend you to specify some CGFloat parameters explicit, because using simple numbers decrease type-checking efficiency.
-
-<details>
-  <summary>Decreased compile type for implicit numbers</summary>
-  <img width="456" alt="Screenshot 2021-08-26 at 12 59 59" src="https://user-images.githubusercontent.com/12981093/131037876-d5d3cc85-4e35-4668-a476-648a711d1d60.png">
-</details>
